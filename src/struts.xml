@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="do"/>
+	<package name="basicstruts2" extends="struts-default">
+		
+		<action name="login" class="org.robby.userAction" method="login">
+			<result type="redirect">index.do</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="logout" class="org.robby.userAction" method="logout">
+			<result>/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="register" class="org.robby.userAction" method="register">
+			<result name="success">/index.jsp</result>
+			<result name="error">/register.jsp</result>
+		</action>
+		
+		<action name="index" class="org.robby.indexAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="follow" class="org.robby.userAction" method="follow">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="unfollow" class="org.robby.userAction" method="unfollow">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="post" class="org.robby.userAction" method="post">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="hello" class="org.robby.hello">
+			<result name="success">/hello.jsp</result>
+		</action>
+	</package>
+</struts>
